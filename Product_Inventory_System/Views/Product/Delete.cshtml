@@ -1,0 +1,80 @@
+﻿@model Product_Inventory_System.Models.Product
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<style>
+    .k {
+        padding: 15px;
+    }
+
+    body {
+        background-color: #B0E0E6;
+        font-family: 'Book Antiqua';
+        font-size: 1.5rem;
+    }
+</style>
+
+<div class="k">
+
+    <h2>Delete</h2>
+
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Product</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayName("Product Name:")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Product_Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Quantity:")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Quantity)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Overall Price:")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.price)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Brand:")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Brand.Brand1)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Category")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Category.Category1)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-danger" /> |
+                @Html.ActionLink("Back to List", "Index", new { }, new { @class = "btn btn-primary" })
+            </div>
+        }
+    </div>
+    </div>

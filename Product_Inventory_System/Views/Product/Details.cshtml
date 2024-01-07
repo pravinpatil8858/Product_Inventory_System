@@ -1,0 +1,72 @@
+﻿@model Product_Inventory_System.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<style>
+    .l {
+        padding: 15px;
+    }
+
+    body {
+        background-color: #B0E0E6;
+        font-family: 'Book Antiqua';
+        font-size: 1.5rem;
+    }
+</style>
+
+<div class="l">
+    <h2>Details</h2>
+
+    <div>
+        <h4>Product</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayName("Product Name:")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Product_Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Quantity:")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Quantity)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Overall Price:")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.price)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Brand:")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Brand.Brand1)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Category:")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Category.Category1)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-success" }) |
+        @Html.ActionLink("Back to List", "Index", new { }, new { @class = "btn btn-primary" })
+    </p>
+</div>

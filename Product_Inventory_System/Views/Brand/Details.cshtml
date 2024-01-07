@@ -1,0 +1,39 @@
+﻿@model Product_Inventory_System.Models.Brand
+
+@{
+    ViewBag.Title = "Details";
+}
+<style>
+    .c {
+        padding: 15px;
+    }
+
+    body {
+        background-color: #B0E0E6;
+        font-family: 'Book Antiqua';
+        font-size: 1.5rem;
+    }
+</style>
+
+<div class="c">
+    <h2>Details</h2>
+
+    <div>
+        <h4>Brand</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Brand1)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Brand1)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id },new { @class = "btn btn-success" }) 
+        @Html.ActionLink("Back to List", "Index", new {}, new { @class = "btn btn-primary" })
+    </p>
+</div>
